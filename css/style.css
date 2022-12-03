@@ -1,0 +1,16 @@
+
+
+button {
+    width: 300px;
+    height: 40px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+

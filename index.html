@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+        http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Maths Tutor</title>
+</head>
+
+<body>
+    <div class="menu">    
+        <h1>Maths Tutor</h1>
+        <p id="info"></p>
+        <p>This app is made to help you learn how to add and how to multiply</p>
+        <a href="./pages/addition.html">
+            <button id="addition">Learn to add</button>
+        </a>
+        <a href="./pages/multiplication.html">
+            <button id="multiplication">Learn to multiply</button>
+        </a>
+        <button id="closeApp">Quit</button>
+        <script src="./scripts/render.js"></script>
+    </div>
+</body>

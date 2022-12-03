@@ -1,0 +1,18 @@
+{
+  "name": "mathstutor",
+  "version": "1.0.0",
+  "description": "Teaches basic mathematics through randomly generated examples and guides",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/proshanto-c/MathsTutor"
+  },
+  "author": "Proshanto Chanda",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^21.3.0"
+  }
+}
