@@ -12,7 +12,7 @@ const createWindow = () => {
         webPreferences: ({
             preload: path.join(__dirname, 'scripts', 'preload.js'),
             nodeIntegration: true,
-
+            contextIsolation: false,
         }),
     });
     mainWindow.maximize();
@@ -68,6 +68,6 @@ const mainMenuTemplate = [
     }
 ];
 
-ipcMain.on('quitApp', (event, arg) => {
+ipcMain.on('quitApp', () => {
     app.quit();
 })
