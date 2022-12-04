@@ -17,11 +17,24 @@
 
     <body>
         <h1>Learn how to add</h1>
+        <div class="digitSelector">
+            <h2>How many digits would you like the integers in the problem to have?</h2>
+            <input type="range" min="1" max="5" value="3" class="digitSlider" id="digits">
+            <button id="randomise">Generate problem</button>
+        </div>
         <div class="problem">
             <h2>Try to add together the following two numbers:</h2>
-            <p id="number1">Example number 1</p>
-            <p id="number2">Example number 2</p>
-            
+            <p id="number1"></p>
+            <p id="number2"></p>
+            <input type="text" id="answer" name="answer" placeholder="Enter answer here...">
+            <input type="submit" value="Check answer">
         </div>
+        <script src="../scripts/addrender.js"></script>
     </body>
+
+    <footer>
+        <a href="../index.html">
+            <button id="mainMenu">Return to main menu</button>
+        </a>
+    </footer>
 </html>

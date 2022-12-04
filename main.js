@@ -71,3 +71,7 @@ const mainMenuTemplate = [
 ipcMain.on('quitApp', () => {
     app.quit();
 })
+
+ipcMain.on('add', () => {
+    mainWindow.webContents.send('additionCall');
+})
