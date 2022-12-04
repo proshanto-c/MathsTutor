@@ -7,6 +7,7 @@ const digitSlider = document.getElementById('digits');
 const answer = document.getElementById('answer');
 const submit = document.getElementById('submit');
 const ci = document.getElementById('ci');
+const problem = document.getElementById('problem');
 
 let v1;
 let v2;
@@ -26,6 +27,7 @@ const randomiseNumbers = () => {
     total = v1+v2;
     number1.innerText = v1;
     number2.innerText = v2;
+    problem.style.opacity = "1";
 }
 
 randButton.addEventListener('click', () => {
