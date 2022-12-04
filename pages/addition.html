@@ -26,8 +26,9 @@
             <h2>Try to add together the following two numbers:</h2>
             <p id="number1"></p>
             <p id="number2"></p>
-            <input type="text" id="answer" name="answer" placeholder="Enter answer here...">
-            <input type="submit" value="Check answer">
+            <input type="number" min="0" step="1" max="1000000" id="answer" name="answer" placeholder="Enter answer here...">
+            <input type="submit" id="submit" value="Check answer">
+            <p id="ci"></p>
         </div>
         <script src="../scripts/addrender.js"></script>
     </body>
