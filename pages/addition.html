@@ -11,31 +11,56 @@
             content="default-src 'self'; script-src 'self'"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/style.css">
         <title>Maths Tutor</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
     </head>
 
+
+
     <body>
-        <h1>Learn how to add</h1>
-        <div class="digitSelector">
-            <h2>How many digits would you like the integers in the problem to have?</h2>
-            <input type="range" min="1" max="5" value="3" class="digitSlider" id="digits">
-            <button class="randomiser" id="randomise">Generate problem</button>
+        <header>
+            <div class="content">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <h2>&lt;</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <h2>Maths Tutor</h2>
+                        </li>
+                        <li>
+                            <a href="#0" id="closeApp">
+                                <h2>x</h2>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="banner">
+            <h1>Learn how to add</h1>
         </div>
-        <div class="problem" id="problem">
-            <h2>Try to add together the following two numbers:</h2>
-            <p id="number1"></p>
-            <p id="number2"></p>
-            <input type="number" min="0" step="1" max="1000000" id="answer" name="answer" placeholder="Enter answer here...">
-            <input type="submit" id="submit" value="Check answer">
-            <p id="ci"></p>
+        <div class="mainContent">
+            <div class="digitSelector" id="digitSelector">
+                <h2>How many digits would you like the integers in the problem to have?</h2>
+                <input type="range" min="1" max="5" value="3" class="digitSlider" id="digits">
+                <button class="randomiser" id="randomise">Generate problem</button>
+            </div>
+            <div class="problem" id="problem">
+                <h2>Try to add together the following two numbers:</h2>
+                <p id="number1"></p>
+                <p id="number2"></p>
+                <input type="number" min="0" step="1" max="1000000" id="answer" name="answer" placeholder="Enter answer here...">
+                <input type="submit" id="submit" value="Check answer">
+                <p id="ci"></p>
+            </div>
         </div>
-        <script src="../scripts/addrender.js"></script>
     </body>
 
-    <footer>
-        <a href="../index.html">
-            <button id="mainMenu">Return to main menu</button>
-        </a>
-    </footer>
+    <script src="../scripts/addrender.js"></script>
 </html>

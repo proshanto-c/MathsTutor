@@ -8,6 +8,8 @@ const answer = document.getElementById('answer');
 const submit = document.getElementById('submit');
 const ci = document.getElementById('ci');
 const problem = document.getElementById('problem');
+const closeApp = document.getElementById('closeApp');
+const digitSelector = document.getElementById('digitSelector');
 
 let v1;
 let v2;
@@ -28,6 +30,8 @@ const randomiseNumbers = () => {
     number1.innerText = v1;
     number2.innerText = v2;
     problem.style.opacity = "1";
+    digitSelector.style.left = "100%";
+    digitSelector.style.transform = "translateX(-100%)";
 }
 
 randButton.addEventListener('click', () => {
@@ -51,3 +55,6 @@ submit.addEventListener('click', () => {
     }
 })
 
+closeApp.addEventListener('click', () => {
+    ipcRenderer.send('quitApp');
+});
