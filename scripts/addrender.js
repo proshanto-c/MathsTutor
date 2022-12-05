@@ -7,7 +7,7 @@ const digitSlider = document.getElementById('digits');
 const answer = document.getElementById('answer');
 const submit = document.getElementById('submit');
 const ci = document.getElementById('ci');
-const problem = document.getElementById('problem');
+const problem = document.getElementById('problemBox');
 const closeApp = document.getElementById('closeApp');
 const digitSelector = document.getElementById('digitSelector');
 
@@ -29,7 +29,9 @@ const randomiseNumbers = () => {
     total = v1+v2;
     number1.innerText = v1;
     number2.innerText = v2;
+    problem.style.visibility = "visible";
     problem.style.opacity = "1";
+    problem.style.transform = "translateX(0)";
     digitSelector.style.left = "100%";
     digitSelector.style.transform = "translateX(-100%)";
 }

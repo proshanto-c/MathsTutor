@@ -11,23 +11,64 @@
             content="default-src 'self'; script-src 'self'"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/style.css">
         <title>Maths Tutor</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
     </head>
 
+
+
     <body>
-        <h1>Learn how to multiply</h1>
-        <div class="problem">
-            <h2>Try to multiplying together the following two numbers:</h2>
-            <p id="number1">Example number 1</p>
-            <p id="number2">Example number 2</p>
-            <script src="../scripts/multiplyrender.js"></script>
+        <header>
+            <div class="content">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <h2>&lt;</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <h1>Maths Tutor</h1>
+                        </li>
+                        <li>
+                            <a href="#0" id="closeApp">
+                                <h2>x</h2>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="banner">
+            <h2>Learn how to multiply</h2>
+        </div>
+        <div class="mainContent">
+            <div class="digitSelector" id="digitSelector">
+                <h3>How many digits would you like the integers to have?</h3>
+                <div class="sliderInfo">
+                    <h3>
+                        1
+                        <input type="range" min="1" max="3" value="2" class="digitSlider" id="digits">
+                        3
+                        <button class="randomiser" id="randomise">Generate</button>
+                    </h3>
+                </div>
+            </div>
+            <div class="problemBox" id="problemBox">
+                <h2>Try to multiply together the following two numbers:</h2>
+                <div>
+                    <h3 id="number1"></h3>
+                    <h3 id="number2"></h3>
+                    <input type="number" min="0" step="1" max="1000000" id="answer" name="answer" placeholder="Enter answer here...">
+                    <input type="submit" id="submit" value="Check answer">
+                    <h3 id="ci"></h3>
+                </div>
+            </div>
         </div>
     </body>
 
-    <footer>
-        <a href="../index.html">
-            <button id="mainMenu">Return to main menu</button>
-        </a>
-    </footer>
+    <script src="../scripts/multiplyrender.js"></script>
 </html>

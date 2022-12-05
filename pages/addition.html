@@ -30,7 +30,7 @@
                             </a>
                         </li>
                         <li>
-                            <h2>Maths Tutor</h2>
+                            <h1>Maths Tutor</h1>
                         </li>
                         <li>
                             <a href="#0" id="closeApp">
@@ -43,21 +43,29 @@
         </header>
 
         <div class="banner">
-            <h1>Learn how to add</h1>
+            <h2>Learn how to add</h2>
         </div>
         <div class="mainContent">
             <div class="digitSelector" id="digitSelector">
-                <h2>How many digits would you like the integers in the problem to have?</h2>
-                <input type="range" min="1" max="5" value="3" class="digitSlider" id="digits">
-                <button class="randomiser" id="randomise">Generate problem</button>
+                <h3>How many digits would you like the integers to have?</h3>
+                <div class="sliderInfo">
+                    <h3>
+                        1
+                        <input type="range" min="1" max="5" value="3" class="digitSlider" id="digits">
+                        5
+                        <button class="randomiser" id="randomise">Generate</button>
+                    </h3>
+                </div>
             </div>
-            <div class="problem" id="problem">
+            <div class="problemBox" id="problemBox">
                 <h2>Try to add together the following two numbers:</h2>
-                <p id="number1"></p>
-                <p id="number2"></p>
-                <input type="number" min="0" step="1" max="1000000" id="answer" name="answer" placeholder="Enter answer here...">
-                <input type="submit" id="submit" value="Check answer">
-                <p id="ci"></p>
+                <div>
+                    <h3 id="number1"></h3>
+                    <h3 id="number2"></h3>
+                    <input type="number" min="0" step="1" max="1000000" id="answer" name="answer" placeholder="Enter answer here...">
+                    <input type="submit" id="submit" value="Check answer">
+                    <h3 id="ci"></h3>
+                </div>
             </div>
         </div>
     </body>
