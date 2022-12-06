@@ -14,6 +14,7 @@ const createWindow = () => {
             nodeIntegration: true,
             contextIsolation: false,
         }),
+        fullscreen: true,
     });
     mainWindow.maximize();
     mainWindow.show();
@@ -37,7 +38,7 @@ app.whenReady().then(() => {
     // Build Menu from Template
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     // Insert menu
-    // Menu.setApplicationMenu(mainMenu);
+    Menu.setApplicationMenu(mainMenu);
 })
 
 // Quit when all windows are closed, except on MacOS
