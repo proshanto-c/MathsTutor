@@ -10,6 +10,7 @@ const ci = document.getElementById('ci');
 const problem = document.getElementById('problemBox');
 const closeApp = document.getElementById('closeApp');
 const digitSelector = document.getElementById('digitSelector');
+const operation = document.title;
 
 let v1;
 let v2;
@@ -26,7 +27,6 @@ const generateRandomInteger = (noOfDigits) => {
 const randomiseNumbers = () => {
     v1 = generateRandomInteger(digits);
     v2 = generateRandomInteger(digits);
-    total = v1+v2;
     number1.innerText = v1;
     number2.innerText = v2;
     problem.style.visibility = "visible";
@@ -34,11 +34,19 @@ const randomiseNumbers = () => {
     problem.style.transform = "translateX(0)";
     digitSelector.style.left = "100%";
     digitSelector.style.transform = "translateX(-100%)";
+    if (operation === "Addition") {
+        total = v1+v2;
+    }
+    else if (operation === "Multiplication") {
+        total = v1*v2;
+    }
 }
 
 randButton.addEventListener('click', () => {
     digits = digitSlider.value;
     randomiseNumbers();
+    ci.innerText = '';
+    answer.value = '';
 });
 
 submit.addEventListener('click', () => {
