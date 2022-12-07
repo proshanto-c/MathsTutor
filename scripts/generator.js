@@ -1,22 +1,28 @@
 const {ipcRenderer} = require('electron');
 
-const number1 = document.getElementById('number1');
-const number2 = document.getElementById('number2');
+// Initialising document variables
+
+// Randomiser section
+const digitSelector = document.getElementById('digitSelector');
 const randButton = document.getElementById('randomise');
 const digitSlider = document.getElementById('digits');
+const sliderValue = document.getElementById('sliderValue');
+// Problem section
+const problem = document.getElementById('problemBox');
+const number1 = document.getElementById('number1');
+const number2 = document.getElementById('number2');
 const answer = document.getElementById('answer');
 const submit = document.getElementById('submit');
 const ci = document.getElementById('ci');
-const problem = document.getElementById('problemBox');
+// Exit app button
 const closeApp = document.getElementById('closeApp');
-const digitSelector = document.getElementById('digitSelector');
+// Pull the name of the page
 const operation = document.title;
 
-let v1;
-let v2;
+// Total value for checking answers
 let total;
-let digits;
 
+// Generate a random number with a set number of digits
 const generateRandomInteger = (noOfDigits) => {
     const max = 10**noOfDigits;
     const min = 10**(noOfDigits-1);
@@ -24,9 +30,15 @@ const generateRandomInteger = (noOfDigits) => {
     return Math.floor(value);
 } 
 
-const randomiseNumbers = () => {
-    v1 = generateRandomInteger(digits);
-    v2 = generateRandomInteger(digits);
+// Does five main things:
+// Randomise the two numbers in the problem seen on screen
+// Reset the answer message and clear the answer box
+// Sets the total to the actual expected answer to the problem on screen
+// Bring the problem box down from behind the top two banners with the numbers generated
+// Move the randomiser section to the right of the screen
+const randomiseNumbers = (noOfDigits) => {
+    const v1 = generateRandomInteger(noOfDigits);
+    const v2 = generateRandomInteger(noOfDigits);
     number1.innerText = v1;
     number2.innerText = v2;
     problem.style.visibility = "visible";
@@ -34,6 +46,8 @@ const randomiseNumbers = () => {
     problem.style.transform = "translateX(0)";
     digitSelector.style.left = "100%";
     digitSelector.style.transform = "translateX(-100%)";
+    ci.innerText = '';
+    answer.value = '';
     if (operation === "Addition") {
         total = v1+v2;
     }
@@ -42,13 +56,13 @@ const randomiseNumbers = () => {
     }
 }
 
+// Run randomiseNumbers when the generate button is clicked
 randButton.addEventListener('click', () => {
-    digits = digitSlider.value;
-    randomiseNumbers();
-    ci.innerText = '';
-    answer.value = '';
+    const digits = digitSlider.value;
+    randomiseNumbers(digits);
 });
 
+// Check submitted answer
 submit.addEventListener('click', () => {
     const userA = answer.value;
     if (userA !== "") {
@@ -65,6 +79,11 @@ submit.addEventListener('click', () => {
     }
 })
 
+// Quit button
 closeApp.addEventListener('click', () => {
     ipcRenderer.send('quitApp');
 });
+
+digitSlider.addEventListener('click', () => {
+    sliderValue.innerText = digitSlider.value;
+})

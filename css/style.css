@@ -97,6 +97,11 @@ nav li {
 
 nav a {
     color: rgb(35, 35, 35);
+    transition: color 0.4s;
+}
+
+nav a:hover {
+    color: grey;
 }
 
 .menu{
@@ -169,4 +174,9 @@ nav a {
     font-size: 1.8rem;
     font-weight: bold;
 
+}
+
+.sliderInfo {
+    display: flex;
+    justify-content: space-evenly;
 }
