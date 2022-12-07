@@ -22,6 +22,24 @@ html {
     font-size: 40px;
 }
 
+@media screen and ((max-width: 1000px) or (max-height: 800px)) {
+    html {
+        font-size: 20px;
+    }    
+    .sliderInfo {
+        flex-wrap: wrap;
+    }
+    .digitSlider {
+        flex-basis: 50%;
+    }
+    .sliderInfo h3 {
+        flex-basis: 100px;
+    }
+    .sliderInfo button {
+        flex-basis: 200px;
+    }
+}
+
 body {
     color: white;
     background-color: black;
@@ -179,4 +197,8 @@ nav a:hover {
 .sliderInfo {
     display: flex;
     justify-content: space-evenly;
+}
+
+#answer {
+    text-align: right;
 }
