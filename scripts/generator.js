@@ -19,8 +19,11 @@ const closeApp = document.getElementById('closeApp');
 // Pull the name of the page
 const operation = document.title;
 
+let v1;
+let v2;
 // Total value for checking answers
 let total;
+
 
 // Generate a random number with a set number of digits
 const generateRandomInteger = (noOfDigits) => {
@@ -30,7 +33,7 @@ const generateRandomInteger = (noOfDigits) => {
     return Math.floor(value);
 } 
 
-const makeAnswerable = (v1, v2) => {
+const makeAnswerable = () => {
     number1.innerText = v1;
     number2.innerText = v2;
     problem.style.visibility = "visible";
@@ -49,9 +52,9 @@ const makeAnswerable = (v1, v2) => {
 // Bring the problem box down from behind the top two banners with the numbers generated
 // Move the randomiser section to the right of the screen
 const randomiseNumbers = (noOfDigits) => {
-    const v1 = generateRandomInteger(noOfDigits);
-    const v2 = generateRandomInteger(noOfDigits);
-    makeAnswerable(v1, v2);
+    v1 = generateRandomInteger(noOfDigits);
+    v2 = generateRandomInteger(noOfDigits);
+    makeAnswerable();
     if (operation === "Addition") {
         total = v1+v2;
         window.electronAPI.a1 = v1;
@@ -97,14 +100,14 @@ digitSlider.addEventListener('click', () => {
 })
 
 if (operation === "Addition" && window.electronAPI.a1 !== 0) {
-    v1 = window.electronAPI.a1;
-    v2 = window.electronAPI.a2;
+    v1 = electronAPI.a1;
+    v2 = electronAPI.a2;
     total = v1+v2;
     makeAnswerable();
 }
 else if (operation === "Multiplication" && window.electronAPI.m1 !== 0) {
-    v1 = window.electronAPI.m1;
-    v2 = window.electronAPI.m2;
+    v1 = electronAPI.m1;
+    v2 = electronAPI.m2;
     total = v1*v2;
     makeAnswerable();
 }
