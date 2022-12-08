@@ -18,6 +18,11 @@ const ci = document.getElementById('ci');
 const closeApp = document.getElementById('closeApp');
 // Pull the name of the page
 const operation = document.title;
+// Help section
+const helpTag = document.getElementById('helpTag');
+const helpButton = document.getElementById('helpMe');
+const helpBox = document.getElementById('helpBox');
+const shadowBox = document.getElementById('shadowBox');
 
 let v1;
 let v2;
@@ -41,6 +46,7 @@ const makeAnswerable = () => {
     problem.style.transform = "translateX(0)";
     digitSelector.style.left = "100%";
     digitSelector.style.transform = "translateX(-100%)";
+    helpTag.style.visibility = "visible";
     ci.innerText = '';
     answer.value = '';
 }
@@ -97,6 +103,16 @@ closeApp.addEventListener('click', () => {
 
 digitSlider.addEventListener('click', () => {
     sliderValue.innerText = digitSlider.value;
+})
+
+helpButton.addEventListener('click', () => {
+    helpBox.style.visibility = "visible";
+    shadowBox.style.visibility = "visible";
+})
+
+shadowBox.addEventListener('click', () => {
+    helpBox.style.visibility = "hidden";
+    shadowBox.style.visibility = "hidden";
 })
 
 if (operation === "Addition" && window.integers.a1 !== 0) {

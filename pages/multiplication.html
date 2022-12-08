@@ -35,7 +35,7 @@
                         </li>
                         <li>
                             <a href="#0" id="closeApp">
-                                <h2>x</h2>
+                                <h2>&times;</h2>
                             </a>
                         </li>
                     </ul>
@@ -53,20 +53,28 @@
                 <div class="sliderInfo">
                         <input type="range" min="1" max="3" value="2" class="digitSlider" id="digits">
                         <h3 id="sliderValue">2</h3>
-                        <button class="randomiser" id="randomise">Generate</button>
+                        <button class="randomiser" id="randomise">&gt;</button>
                 </div>
             </div>
             <!-- Problem box (starts off screen to the top) -->
             <div class="problemBox" id="problemBox">
-                <h2>Try multiplying these numbers together:</h2>
+                <h2>Try this:</h2>
                 <div>
-                    <h3 id="number1"></h3>
-                    <h3 id="number2"></h3>
-                    <input type="number" class="number" min="0" step="1" max="1000000" id="answer" name="answer" placeholder="Answer here">
-                    <input type="submit" id="submit" value="Check answer">
+                    <div class="problemItself">
+                        <h3 id="number1"><br></h3>
+                        <h3 id="number2"><br></h3>
+                        <input type="number" class="number" min="0" step="1" max="1000000" id="answer" name="answer">
+                    </div>
+                    <div class="buttonsEtc">
+                        <h3><br>&times;</h3>
+                        <input type="submit" id="submit" value=">">
+                    </div>
                     <h3 id="ci"></h3>
                 </div>
             </div>
+        </div>
+        <div class="helpTag">
+            <button class="helpMe" id="helpMe">Need help?</button>
         </div>
     </body>
 
