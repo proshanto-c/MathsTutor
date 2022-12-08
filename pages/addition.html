@@ -62,7 +62,7 @@
                 <div>
                     <div class="problemItself">
                         <h3 id="number1"><br></h3>
-                        <h3 id="number2"><br></h3>
+                        <h3 class="number2" id="number2"><br></h3>
                         <input type="number" class="number" min="0" step="1" max="1000000" id="answer" name="answer">
                         <h3 id="ci"></h3>
                     </div>
@@ -75,7 +75,75 @@
         </div>
         <div id="shadowBox"></div>
         <div class="helpBox" id="helpBox">
-
+            <div class="exampleProblem">
+                <div class="problemItself" id="exampleProblem">
+                    <h3>
+                        <span class="h">6</span>
+                        <span class="t">8</span>
+                        <span class="u">3</span>
+                    </h3>
+                    <h3 class="number2">
+                        <span class="h">2</span>
+                        <span class="t">3</span>
+                        <span class="u">4</span>
+                    </h3>
+                    <h3 class="total" id="total">
+                        <span class="h" id="page4n">1</span>
+                        <span class="t" id="page3n">11</span>
+                        <span class="u" id="page2n">7</span>
+                    </h3>
+                </div>
+                <div class="buttonsEtc">
+                    <h3><br>+</h3>
+                </div>
+            </div>
+            <div class="explanation">
+                <div class="page" id="page1">
+                    <h4>
+                        We can solve this problem by adding together the numbers in the same column, starting from the right.
+                        If we take the example on the left, this means that we would start by adding together 
+                        <span class="u">3</span> and <span class="u">4</span>. 
+                    </h4>
+                </div>
+                <div class="page" id="page2">
+                    <h4>
+                        That adds up to <span class="u">7</span>, so let's write that underneath the problem in the same
+                        column. Now we move one column to the left, which means that we need to add together 
+                        <span class="t">8</span> and <span class="t">3</span>.
+                    </h4>
+                </div>
+                <div class="page" id="page3">
+                    <h4>
+                        8 and 3 add up to 11, which means that, when we write the number underneath, it continues onto
+                        the column to the right, and doesn't just fit in one column. So how do we deal with this?
+                    </h4>
+                </div>
+                <div class="page" id="page4">
+                    <h4>
+                        Instead of ignoring the number, or worse, making a new column for it, we instead leave it in that 
+                        column and act as though it is above the line instead. This means that now we will be adding together 
+                        <span class="h">6</span>, <span class="h">2</span>, and <span class="h">1</span>.
+                    </h4>
+                </div>
+                <div class="page" id="page5">
+                    <h4>
+                        And now we have our final answer: 917!
+                    </h4>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#0" id="leftPage"><h3>&lt;</h3></a>
+                    </li>
+                    <li>
+                        <h3 id="pageNo">1</h3>
+                    </li>
+                    <li>
+                        <a href="#0" id="rightPage"><h3>&gt;</h3></a>
+                    </li>
+                </ul>
+            </nav>
         </div>
         <div class="helpTag" id="helpTag">
             <button class="helpMe" id="helpMe">Need help?</button>

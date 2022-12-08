@@ -23,6 +23,11 @@ const helpTag = document.getElementById('helpTag');
 const helpButton = document.getElementById('helpMe');
 const helpBox = document.getElementById('helpBox');
 const shadowBox = document.getElementById('shadowBox');
+const pageNo = document.getElementById('pageNo');
+const leftPage = document.getElementById('leftPage');
+const rightPage = document.getElementById('rightPage');
+const pages = [document.getElementById('page1'), document.getElementById('page2'), document.getElementById('page3'), document.getElementById('page4'), document.getElementById('page5')]
+const numbers = [document.getElementById('page2n'), document.getElementById('page3n'), document.getElementById('page4n')]
 
 let v1;
 let v2;
@@ -108,22 +113,76 @@ digitSlider.addEventListener('click', () => {
 helpButton.addEventListener('click', () => {
     helpBox.style.visibility = "visible";
     shadowBox.style.visibility = "visible";
+    setPage(1);
 })
 
 shadowBox.addEventListener('click', () => {
     helpBox.style.visibility = "hidden";
     shadowBox.style.visibility = "hidden";
+    for (var i = 0; i<pages.length; i++) {
+        pages[i].style.visibility = "hidden";
+    }
+    for (var i = 0; i<numbers.length; i++) {
+        numbers[i].style.visibility = "hidden";
+    }
+    leftPage.style.visibility = "hidden";
+    rightPage.style.visibility = "hidden";
 })
 
-if (operation === "Addition" && window.integers.a1 !== 0) {
-    v1 = window.integers.a1;
-    v2 = window.integers.a2;
-    total = v1+v2;
-    makeAnswerable();
+// Help box navigation
+rightPage.addEventListener('click', () => {
+    const newNo = Number(pageNo.innerText) + 1;
+    setPage(newNo);
+})
+
+leftPage.addEventListener('click', () => {
+    const newNo = Number(pageNo.innerText) - 1;
+    setPage(newNo);
+})
+
+const setPage = (newPage) => {
+    pageNo.innerText = newPage.toString();
+    for (var i = 0; i<pages.length; i++) {
+        pages[i].style.visibility = "hidden";
+    }
+    pages[newPage-1].style.visibility = "visible";
+    if (newPage === 1) {
+        leftPage.style.visibility = "hidden";
+        numbers[0].style.visibility = "hidden";
+    }
+    else if (newPage === 2) {
+        leftPage.style.visibility = "visible";
+        numbers[0].style.visibility = "visible";
+        numbers[1].style.visibility = "hidden";
+    }
+    else if (newPage === 3) {
+        numbers[1].style.visibility = "visible";
+        numbers[2].style.visibility = "hidden";
+        numbers[1].innerText = "11";
+    }
+    else if (newPage === 4) {
+        rightPage.style.visibility = "visible";
+        numbers[2].style.visibility = "visible";
+        numbers[1].innerText = "1";
+        numbers[2].innerText = "1";
+    }
+    else if (newPage === 5) {
+        rightPage.style.visibility = "hidden";
+        numbers[2].innerText = "9";
+    }
+
 }
-else if (operation === "Multiplication" && window.integers.m1 !== 0) {
-    v1 = window.integers.m1;
-    v2 = window.integers.m2;
-    total = v1*v2;
-    makeAnswerable();
-}
+
+// if (operation === "Addition" && window.integers.a1 !== 0) {
+//     v1 = window.integers.a1;
+//     v2 = window.integers.a2;
+//     total = v1+v2;
+//     makeAnswerable();
+// }
+// else if (operation === "Multiplication" && window.integers.m1 !== 0) {
+//     v1 = window.integers.m1;
+//     v2 = window.integers.m2;
+//     total = v1*v2;
+//     makeAnswerable();
+// }
+

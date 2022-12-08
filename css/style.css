@@ -103,7 +103,7 @@ header nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 99%;
     height: 49px;
     text-decoration: none;
     padding-left: 5px;
@@ -242,6 +242,66 @@ button {
     visibility: hidden;
 }
 
+.exampleProblem {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 30%;
+}
+
+.h {
+    color: aqua;
+}
+
+.t {
+    color: orange;
+}
+
+.u {
+    color: red;
+}
+
+.explanation {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 60%;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.helpBox nav ul {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.helpBox nav a {
+    color: white;
+}
+
+.helpBox nav a:hover {
+    color: grey;
+}
+
+.number2 {
+    text-decoration: underline;
+}
+
 #shadowBox {
     position: absolute;
     top: 0;
@@ -265,6 +325,6 @@ button {
     font-weight: bold;
 }
 
-#number2 {
-    text-decoration: underline;
+#leftPage, #page2, #page2n, #page3, #page3n, #page4, #page4n, #page5 {
+    visibility: hidden;
 }
