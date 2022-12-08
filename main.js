@@ -1,5 +1,6 @@
 const {app, BrowserWindow, ipcMain, Menu} = require('electron');
 const url = require('url');
+const path = require('path');
 
 let mainWindow;
 
@@ -9,6 +10,7 @@ const createWindow = () => {
         show: false,
         autoHideMenuBar: true,
         webPreferences: ({
+            preload: path.join(__dirname, 'scripts', 'preload.js'),
             nodeIntegration: true,
             contextIsolation: false,
         }),

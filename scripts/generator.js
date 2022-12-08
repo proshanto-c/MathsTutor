@@ -30,15 +30,7 @@ const generateRandomInteger = (noOfDigits) => {
     return Math.floor(value);
 } 
 
-// Does five main things:
-// Randomise the two numbers in the problem seen on screen
-// Reset the answer message and clear the answer box
-// Sets the total to the actual expected answer to the problem on screen
-// Bring the problem box down from behind the top two banners with the numbers generated
-// Move the randomiser section to the right of the screen
-const randomiseNumbers = (noOfDigits) => {
-    const v1 = generateRandomInteger(noOfDigits);
-    const v2 = generateRandomInteger(noOfDigits);
+const makeAnswerable = (v1, v2) => {
     number1.innerText = v1;
     number2.innerText = v2;
     problem.style.visibility = "visible";
@@ -48,11 +40,27 @@ const randomiseNumbers = (noOfDigits) => {
     digitSelector.style.transform = "translateX(-100%)";
     ci.innerText = '';
     answer.value = '';
+}
+
+// Does five main things:
+// Randomise the two numbers in the problem seen on screen
+// Reset the answer message and clear the answer box
+// Sets the total to the actual expected answer to the problem on screen
+// Bring the problem box down from behind the top two banners with the numbers generated
+// Move the randomiser section to the right of the screen
+const randomiseNumbers = (noOfDigits) => {
+    const v1 = generateRandomInteger(noOfDigits);
+    const v2 = generateRandomInteger(noOfDigits);
+    makeAnswerable(v1, v2);
     if (operation === "Addition") {
         total = v1+v2;
+        window.electronAPI.a1 = v1;
+        window.electronAPI.a2 = v2;
     }
     else if (operation === "Multiplication") {
         total = v1*v2;
+        window.electronAPI.m1 = v1;
+        window.electronAPI.m2 = v2;
     }
 }
 
@@ -87,3 +95,16 @@ closeApp.addEventListener('click', () => {
 digitSlider.addEventListener('click', () => {
     sliderValue.innerText = digitSlider.value;
 })
+
+if (operation === "Addition" && window.electronAPI.a1 !== 0) {
+    v1 = window.electronAPI.a1;
+    v2 = window.electronAPI.a2;
+    total = v1+v2;
+    makeAnswerable();
+}
+else if (operation === "Multiplication" && window.electronAPI.m1 !== 0) {
+    v1 = window.electronAPI.m1;
+    v2 = window.electronAPI.m2;
+    total = v1*v2;
+    makeAnswerable();
+}
