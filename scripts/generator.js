@@ -57,13 +57,13 @@ const randomiseNumbers = (noOfDigits) => {
     makeAnswerable();
     if (operation === "Addition") {
         total = v1+v2;
-        window.electronAPI.a1 = v1;
-        window.electronAPI.a2 = v2;
+        window.integers.a1 = v1;
+        window.integers.a2 = v2;
     }
     else if (operation === "Multiplication") {
         total = v1*v2;
-        window.electronAPI.m1 = v1;
-        window.electronAPI.m2 = v2;
+        window.integers.m1 = v1;
+        window.integers.m2 = v2;
     }
 }
 
@@ -99,15 +99,15 @@ digitSlider.addEventListener('click', () => {
     sliderValue.innerText = digitSlider.value;
 })
 
-if (operation === "Addition" && window.electronAPI.a1 !== 0) {
-    v1 = electronAPI.a1;
-    v2 = electronAPI.a2;
+if (operation === "Addition" && window.integers.a1 !== 0) {
+    v1 = window.integers.a1;
+    v2 = window.integers.a2;
     total = v1+v2;
     makeAnswerable();
 }
-else if (operation === "Multiplication" && window.electronAPI.m1 !== 0) {
-    v1 = electronAPI.m1;
-    v2 = electronAPI.m2;
+else if (operation === "Multiplication" && window.integers.m1 !== 0) {
+    v1 = integers.m1;
+    v2 = integers.m2;
     total = v1*v2;
     makeAnswerable();
 }
