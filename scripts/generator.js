@@ -28,6 +28,7 @@ const leftPage = document.getElementById('leftPage');
 const rightPage = document.getElementById('rightPage');
 const pages = [document.getElementById('page1'), document.getElementById('page2'), document.getElementById('page3'), document.getElementById('page4'), document.getElementById('page5')]
 const numbers = [document.getElementById('page2n'), document.getElementById('page3n'), document.getElementById('page4n')]
+// Multiplication-page-specific elements
 if (operation === "Multiplication") {
     const leftmost = document.getElementById('leftmost');
     const middle = document.getElementById('middle');
@@ -52,6 +53,7 @@ const generateRandomInteger = (noOfDigits) => {
     return Math.floor(value);
 } 
 
+// Present the question and answer box
 const makeAnswerable = () => {
     number1.innerText = v1;
     number2.innerText = v2;
@@ -115,19 +117,24 @@ closeApp.addEventListener('click', () => {
     ipcRenderer.send('quitApp');
 });
 
+// Make a display for the value that digitSlider is set to that dynamically adjusts
 digitSlider.addEventListener('click', () => {
     sliderValue.innerText = digitSlider.value;
 })
 
+// Make a helpBox that appears on top of the current page and casts a shadow on top of the page
 helpButton.addEventListener('click', () => {
     helpBox.style.visibility = "visible";
     shadowBox.style.visibility = "visible";
     setPage(1);
 })
 
+// Make it so that clicking away from the helpBox closes it
 shadowBox.addEventListener('click', () => {
     helpBox.style.visibility = "hidden";
     shadowBox.style.visibility = "hidden";
+    // Have to be called separately since they are specifically called out and defined in the 
+    // setPage function
     for (var i = 0; i<pages.length; i++) {
         pages[i].style.visibility = "hidden";
     }
@@ -138,27 +145,33 @@ shadowBox.addEventListener('click', () => {
     rightPage.style.visibility = "hidden";
 })
 
-// Help box navigation
+// Help box navigation functions assigned to the directional buttons
 rightPage.addEventListener('click', () => {
     const newNo = Number(pageNo.innerText) + 1;
     setPage(newNo);
 })
-
 leftPage.addEventListener('click', () => {
     const newNo = Number(pageNo.innerText) - 1;
     setPage(newNo);
 })
 
+// setPage function for changing the page on the help screen
 const setPage = (newPage) => {
     pageNo.innerText = newPage.toString();
+    // Make all pages invisible...
     for (var i = 0; i<pages.length; i++) {
         pages[i].style.visibility = "hidden";
     }
+    // ...then make the page that you want visible again
     pages[newPage-1].style.visibility = "visible";
+    // Hide the information that's only meant to be stored on the page before or after, 
+    // then show the information that's meant to be stored on that specific page but isn't
+    // shown on one or more of the pages directly before or after
     switch (newPage) {
         case 1 :
             leftPage.style.visibility = "hidden";
             numbers[0].style.visibility = "hidden";
+            // Change coloration on row 2
             if (operation === "Multiplication") {
                 cl.innerText = "2";
                 r.innerText = "3";
@@ -169,6 +182,7 @@ const setPage = (newPage) => {
             leftPage.style.visibility = "visible";
             numbers[0].style.visibility = "visible";
             numbers[1].style.visibility = "hidden";
+            // Change coloration on row 2
             if (operation === "Multiplication") {
                 cl.innerText = "";
                 r.innerText = "2";
@@ -178,9 +192,11 @@ const setPage = (newPage) => {
         case 3 :
             numbers[1].style.visibility = "visible";
             numbers[2].style.visibility = "hidden";
+            // Change spacing and coloration on total
             if (operation === "Addition") {
                 numbers[1].innerText = "11";
             }
+            // Change number on row 4 and hide addition sign
             else if (operation === "Multiplication") {
                 leftmost.style.visibility = "hidden";
                 middle.innerText = "5";
@@ -189,11 +205,13 @@ const setPage = (newPage) => {
             break;
         case 4 :
             rightPage.style.visibility = "visible";
+            // Change spacing and coloration on total
             if (operation === "Addition") {
                 numbers[1].innerText = "1";
                 numbers[2].innerText = "1";
                 numbers[2].style.visibility = "visible";            
             }
+            // Change number on row 4 and show addition sign
             else if (operation === "Multiplication") {
                 leftmost.style.visibility = "visible";
                 middle.innerText = "0";
@@ -203,9 +221,11 @@ const setPage = (newPage) => {
             break;
         case 5 :
             rightPage.style.visibility = "hidden";
+            // Show total
             if (operation === "Addition") {
                 numbers[2].innerText = "9";            
             }
+            // Show total
             else if (operation === "Multiplication") {
                 numbers[2].style.visibility = "visible";
             }
