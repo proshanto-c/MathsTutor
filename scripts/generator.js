@@ -232,17 +232,3 @@ const setPage = (newPage) => {
             break;
     }
 }
-
-// if (operation === "Addition" && window.integers.a1 !== 0) {
-//     v1 = window.integers.a1;
-//     v2 = window.integers.a2;
-//     total = v1+v2;
-//     makeAnswerable();
-// }
-// else if (operation === "Multiplication" && window.integers.m1 !== 0) {
-//     v1 = window.integers.m1;
-//     v2 = window.integers.m2;
-//     total = v1*v2;
-//     makeAnswerable();
-// }
-
