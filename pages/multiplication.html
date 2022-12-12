@@ -82,50 +82,63 @@
                         <span class="u">5</span>
                     </h3>
                     <h3 class="number2">
-                        <span>1</span>
-                        <span class="u">3</span>
+                        <span class="h" id="cl">2</span>
+                        <span class="u" id="r">3</span>
+                        <span class="h" id="cr"></span>
                     </h3>
-                    <h3 class="total" id="total">
-                        <span class="h" id="page4n">1</span>
-                        <span class="t" id="page3n">11</span>
-                        <span class="u" id="page2n">7</span>
+                    <h3 class="total" id="page2n">
+                        <span class="t">7</span>
+                        <span class="t">5</span>
+                    </h3>
+                    <h3 class="number2" id="page3n">
+                        <span class="t" id="leftmost">5</span>
+                        <span class="t" id="middle">5</span>
+                        <span class="t" id="rightmost">0</span>
+                    </h3>
+                    <h3 class="total" id="page4n">
+                        <span>5</span>
+                        <span>7</span>
+                        <span>5</span>
                     </h3>
                 </div>
                 <div class="buttonsEtc">
-                    <h3><br>+</h3>
+                    <h3><br>&times;</h3>
+                    <h3 id="addSign"><br>+</h3>
                 </div>
             </div>
             <div class="explanation">
                 <div class="page" id="page1">
                     <h4>
-                        We can solve this problem by adding together the numbers in the same column, starting from the right.
-                        If we take the example on the left, this means that we would start by adding together 
-                        <span class="u">3</span> and <span class="u">4</span>. 
+                        We can solve this problem by breaking down the bottom number into individual columns. We then start in
+                         the rightmost column of the bottom number, and multiply each column by the whole top number. So, to start,
+                         let's multiply together 
+                        <span class="u">25</span> and <span class="u">3</span>. 
                     </h4>
                 </div>
                 <div class="page" id="page2">
                     <h4>
-                        That adds up to <span class="u">7</span>, so let's write that underneath the problem in the same
-                        column. Now we move one column to the left, which means that we need to add together 
-                        <span class="t">8</span> and <span class="t">3</span>.
+                        That multiplies to <span class="t">75</span>, so let's write that underneath the problem in the first 
+                        available row. Now we move one column to the left, which means that we need to multiply together 
+                        <span class="u">25</span> and <span class="u">2</span>.
                     </h4>
                 </div>
                 <div class="page" id="page3">
                     <h4>
-                        8 and 3 add up to 11, which means that, when we write the number underneath, it continues onto
-                        the column to the right, and doesn't just fit in one column. So how do we deal with this?
+                        That multiplies to 50. However, we need to remember that we're not just multiplying 25 by 2 here. Since the 
+                        two was in the "tens" column, that means that we were actually multiplying 25 by 20. So now, we need to multiply 
+                        our result by 10.
                     </h4>
                 </div>
                 <div class="page" id="page4">
                     <h4>
-                        Instead of ignoring the number, or worse, making a new column for it, we instead leave it in that 
-                        column and act as though it is above the line instead. This means that now we will be adding together 
-                        <span class="h">6</span>, <span class="h">2</span>, and <span class="h">1</span>.
+                        Now we have 500! Since we've now multiplied all columns together, all that's left to do is to add together the numbers 
+                        under the line to find our total! So let's add together 
+                        <span class="t">500</span> and <span class="t">75</span>.
                     </h4>
                 </div>
                 <div class="page" id="page5">
                     <h4>
-                        And now we have our final answer: 917!
+                        And now we have our final answer: 575!
                     </h4>
                 </div>
             </div>
@@ -143,7 +156,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="helpTag">
+        <div class="helpTag" id="helpTag">
             <button class="helpMe" id="helpMe">Need help?</button>
         </div>
     </body>

@@ -28,6 +28,15 @@ const leftPage = document.getElementById('leftPage');
 const rightPage = document.getElementById('rightPage');
 const pages = [document.getElementById('page1'), document.getElementById('page2'), document.getElementById('page3'), document.getElementById('page4'), document.getElementById('page5')]
 const numbers = [document.getElementById('page2n'), document.getElementById('page3n'), document.getElementById('page4n')]
+if (operation === "Multiplication") {
+    const leftmost = document.getElementById('leftmost');
+    const middle = document.getElementById('middle');
+    const addSign = document.getElementById('addSign');
+    const cl = document.getElementById('cl');
+    const r = document.getElementById('r');
+    const cr = document.getElementById('cr');
+}
+
 
 let v1;
 let v2;
@@ -146,31 +155,62 @@ const setPage = (newPage) => {
         pages[i].style.visibility = "hidden";
     }
     pages[newPage-1].style.visibility = "visible";
-    if (newPage === 1) {
-        leftPage.style.visibility = "hidden";
-        numbers[0].style.visibility = "hidden";
+    switch (newPage) {
+        case 1 :
+            leftPage.style.visibility = "hidden";
+            numbers[0].style.visibility = "hidden";
+            if (operation === "Multiplication") {
+                cl.innerText = "2";
+                r.innerText = "3";
+                cr.innerText = "";
+            }
+            break;
+        case 2 :
+            leftPage.style.visibility = "visible";
+            numbers[0].style.visibility = "visible";
+            numbers[1].style.visibility = "hidden";
+            if (operation === "Multiplication") {
+                cl.innerText = "";
+                r.innerText = "2";
+                cr.innerText = "3";
+            }
+            break;
+        case 3 :
+            numbers[1].style.visibility = "visible";
+            numbers[2].style.visibility = "hidden";
+            if (operation === "Addition") {
+                numbers[1].innerText = "11";
+            }
+            else if (operation === "Multiplication") {
+                leftmost.style.visibility = "hidden";
+                middle.innerText = "5";
+                addSign.style.visibility = "hidden";
+            }
+            break;
+        case 4 :
+            rightPage.style.visibility = "visible";
+            if (operation === "Addition") {
+                numbers[1].innerText = "1";
+                numbers[2].innerText = "1";
+                numbers[2].style.visibility = "visible";            
+            }
+            else if (operation === "Multiplication") {
+                leftmost.style.visibility = "visible";
+                middle.innerText = "0";
+                numbers[2].style.visibility = "hidden";
+                addSign.style.visibility = "visible";
+            }
+            break;
+        case 5 :
+            rightPage.style.visibility = "hidden";
+            if (operation === "Addition") {
+                numbers[2].innerText = "9";            
+            }
+            else if (operation === "Multiplication") {
+                numbers[2].style.visibility = "visible";
+            }
+            break;
     }
-    else if (newPage === 2) {
-        leftPage.style.visibility = "visible";
-        numbers[0].style.visibility = "visible";
-        numbers[1].style.visibility = "hidden";
-    }
-    else if (newPage === 3) {
-        numbers[1].style.visibility = "visible";
-        numbers[2].style.visibility = "hidden";
-        numbers[1].innerText = "11";
-    }
-    else if (newPage === 4) {
-        rightPage.style.visibility = "visible";
-        numbers[2].style.visibility = "visible";
-        numbers[1].innerText = "1";
-        numbers[2].innerText = "1";
-    }
-    else if (newPage === 5) {
-        rightPage.style.visibility = "hidden";
-        numbers[2].innerText = "9";
-    }
-
 }
 
 // if (operation === "Addition" && window.integers.a1 !== 0) {

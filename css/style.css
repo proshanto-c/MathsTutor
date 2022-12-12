@@ -39,6 +39,9 @@ html {
     .sliderInfo button {
         flex-basis: 200px;
     }
+    .explanation h4 {
+        font-size: 1.3rem;
+    }
 }
 
 body {
@@ -221,14 +224,13 @@ button {
 
 .helpBox {
     position: absolute;
-    top: 3.5rem;
+    top: 2.8rem;
     left: 50%;
     transform: translate(-50%);
     background-color: rgb(35, 35, 35);
     z-index: 12;
     width: 80%;
     height: 80%;
-    opacity: 1;
     border: 0.2rem solid grey;
     border-radius: 0.5rem;
     visibility: hidden;
@@ -245,7 +247,7 @@ button {
 .exampleProblem {
     position: absolute;
     left: 0;
-    top: 30%;
+    top: 20%;
     transform: translateY(-50%);
     display: inline-block;
     width: 30%;
@@ -266,7 +268,7 @@ button {
 .explanation {
     position: absolute;
     right: 0;
-    top: 30%;
+    top: 5%;
     transform: translateY(-50%);
     display: inline-block;
     width: 60%;
@@ -325,6 +327,6 @@ button {
     font-weight: bold;
 }
 
-#leftPage, #page2, #page2n, #page3, #page3n, #page4, #page4n, #page5 {
+#leftPage, #page2, #page2n, #page3, #page3n, #page4, #page4n, #page5, #addSign {
     visibility: hidden;
 }
