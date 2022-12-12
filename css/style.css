@@ -140,12 +140,12 @@ nav li {
 }
 
 nav a {
-    color: rgb(35, 35, 35);
+    color: grey;
     transition: color 0.4s;
 }
 
 nav a:hover {
-    color: grey;
+    color: white;
 }
 
 button {

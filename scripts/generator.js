@@ -95,8 +95,7 @@ randButton.addEventListener('click', () => {
     randomiseNumbers(digits);
 });
 
-// Check submitted answer
-submit.addEventListener('click', () => {
+const submission = () => {
     const userA = answer.value;
     if (userA !== "") {
         const ans = parseInt(userA);
@@ -110,7 +109,18 @@ submit.addEventListener('click', () => {
     else {
         ci.innerText = 'Please enter a valid number';
     }
+}
+
+// Check submitted answer
+submit.addEventListener('click', () => {
+    submission()
 })
+answer.addEventListener('keydown', (event) => {
+    if (event.code === 'Enter') {
+        submission();
+    }
+})
+
 
 // Quit button
 closeApp.addEventListener('click', () => {
@@ -126,6 +136,7 @@ digitSlider.addEventListener('click', () => {
 helpButton.addEventListener('click', () => {
     helpBox.style.visibility = "visible";
     shadowBox.style.visibility = "visible";
+    rightPage.style.visibility = "visible";
     setPage(1);
 })
 
