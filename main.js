@@ -14,7 +14,7 @@ const createWindow = () => {
             contextIsolation: false,
         }),
         minWidth: 700,
-        minHeight: 400,
+        minHeight: 600,
     });
     mainWindow.maximize();
     mainWindow.show();

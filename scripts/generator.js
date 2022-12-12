@@ -28,7 +28,7 @@ const leftPage = document.getElementById('leftPage');
 const rightPage = document.getElementById('rightPage');
 const pages = [document.getElementById('page1'), document.getElementById('page2'), document.getElementById('page3'), document.getElementById('page4'), document.getElementById('page5')]
 const numbers = [document.getElementById('page2n'), document.getElementById('page3n'), document.getElementById('page4n')]
-// Multiplication-page-specific elements
+// Multiplication-page-specific elements (help section)
 if (operation === "Multiplication") {
     const leftmost = document.getElementById('leftmost');
     const middle = document.getElementById('middle');
@@ -143,6 +143,10 @@ shadowBox.addEventListener('click', () => {
     }
     leftPage.style.visibility = "hidden";
     rightPage.style.visibility = "hidden";
+    if (operation === "Multiplication") {
+        addSign.style.visibility = "hidden";
+        leftmost.style.visibility = "hidden";
+    }
 })
 
 // Help box navigation functions assigned to the directional buttons
