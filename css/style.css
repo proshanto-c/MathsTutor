@@ -23,6 +23,28 @@ html {
     overflow: hidden;
 }
 
+
+@media screen and ((max-width: 1500px) or (max-height: 1200px)) {
+    html {
+        font-size: 30px;
+    }    
+    .sliderInfo {
+        flex-wrap: wrap;
+    }
+    .digitSlider {
+        flex-basis: 50%;
+    }
+    .sliderInfo h3 {
+        flex-basis: 100px;
+    }
+    .sliderInfo button {
+        flex-basis: 200px;
+    }
+    .explanation h4 {
+        font-size: 1.3rem;
+    }
+}
+
 @media screen and ((max-width: 1000px) or (max-height: 800px)) {
     html {
         font-size: 20px;
