@@ -1,5 +1,6 @@
 # MathsTutor
 Maths Tutor app remade using Electron
+
 This is a basic rebuild of an app that I made a few years ago originally in Unity. I built it to try and get more familiar with/comfortable with Electron and JS.
 Since the app was basically made just for the sake of practice, I haven't released a packaged version of the file, however if you would like to run the app and 
 see what it is like here is how:
